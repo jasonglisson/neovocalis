@@ -1,0 +1,54 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700);
+/* This is the Sass file for Neovocalis. Please edit this file and compile it into the css file using grunt, compass, or another compiler */
+/* FONTS */
+/* HEADER - Desktop */
+header.header {
+  background: #293140;
+  height: auto; }
+  header.header #logo {
+    display: block;
+    padding: 24px 8px;
+    width: 300px;
+    float: left; }
+
+/* HEADER - Mobile */
+/* MENU */
+header.header #inner-header ul {
+  padding: 0px;
+  margin: 0px;
+  float: right; }
+  header.header #inner-header ul li:nth-of-type(1) a {
+    background: #3d4552; }
+  header.header #inner-header ul li:nth-of-type(2) a {
+    background: #535b6c; }
+  header.header #inner-header ul li:nth-of-type(3) a {
+    background: #6b7386; }
+  header.header #inner-header ul li:nth-of-type(4) a {
+    background: #858ca0; }
+  header.header #inner-header ul li:nth-of-type(5) a {
+    background: #a1a6ba; }
+  header.header #inner-header ul li:nth-of-type(6) a {
+    background: #bec1d3; }
+  header.header #inner-header ul li {
+    display: block;
+    list-style-type: none;
+    float: left; }
+    header.header #inner-header ul li a {
+      text-decoration: none;
+      color: #FFF;
+      padding: 35px 0px;
+      width: 110px;
+      display: block;
+      float: left;
+      text-align: center;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 200;
+      -o-transition: 0.5s;
+      -ms-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      font-size: 1.1em; }
+      header.header #inner-header ul li a:hover {
+        color: #666;
+        background: #DDD; }
