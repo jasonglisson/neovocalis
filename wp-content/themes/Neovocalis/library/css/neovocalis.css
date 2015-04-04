@@ -52,3 +52,96 @@ header.header #inner-header ul {
       header.header #inner-header ul li a:hover {
         color: #666;
         background: #DDD; }
+  header.header #inner-header ul li.current-menu-item a {
+    color: #666;
+    background: #DDD; }
+
+/* Mobile Menu */
+.mobile-header {
+  background: #293140;
+  height: 72px; }
+  .mobile-header img {
+    padding: 15px;
+    width: 300px; }
+  .mobile-header .small-3 {
+    padding-top: 20px; }
+
+.mobile-menu-icon span {
+  background: #fff;
+  display: block;
+  opacity: 1;
+  transition: all 0.2s linear;
+  margin-bottom: 6px;
+  position: relative;
+  width: 100%;
+  height: 5px;
+  background: #fff; }
+
+.mobile-menu-icon span .span2 {
+  transition: all 0.05s linear; }
+
+.show-mobile-menu .mobile-menu-icon {
+  margin-right: 5px;
+  width: 40px;
+  float: right; }
+
+.mobile-menu-icon.stuck span:first-child {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  opacity: 1;
+  top: 11px; }
+
+.mobile-menu-icon.stuck span {
+  opacity: 0; }
+
+.mobile-menu-icon.stuck span:last-child {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  opacity: 1;
+  bottom: 11px; }
+
+.mobile-menu {
+  position: fixed;
+  top: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(65, 65, 65, 0.96);
+  z-index: 92;
+  transition: 0.5s all;
+  overflow-y: scroll; }
+  .mobile-menu ul {
+    margin: 140px 0 0 0;
+    padding: 0; }
+    .mobile-menu ul li {
+      list-style: none;
+      list-style-type: none;
+      text-align: center;
+      font-size: 200%;
+      text-transform: uppercase;
+      padding: 5px 0; }
+      .mobile-menu ul li a {
+        color: #fff;
+        font-family: 'Source Sans Pro', sans-serif; }
+
+.mobile-menu.active {
+  top: 0%; }
+
+body.overflow {
+  overflow: hidden; }
+
+/* Page Title */
+.title-wrap {
+  background: #ddd url(../images/title-bg.jpg) center bottom repeat-x; }
+  .title-wrap h1 {
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 15px 15px 15px 0px;
+    font-weight: 200;
+    font-style: italic;
+    text-shadow: 1px 1px 3px #666;
+    font-size: 2.4rem; }

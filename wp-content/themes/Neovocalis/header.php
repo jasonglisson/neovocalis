@@ -43,14 +43,24 @@
 						 <?php // get_template_part( 'partials/nav', 'top-offcanvas' ); ?>
 								 
 						<div id="inner-header" class="row">
-							<a href="/" title="Home" rel="home" id="logo" class=""><img src="<?php echo get_template_directory_uri(); ?>/library/images/logo.png" alt="Home"></a>
+							<div class="large-12 columns">
+								<a href="/" title="Home" rel="home" id="logo" class=""><img src="<?php echo get_template_directory_uri(); ?>/library/images/logo.png" alt="Home"></a>
 							 <!-- This navs will be applied to the main, under the logo 
 								  To see additional nav styles, visit the /partials directory -->
 								  
-							 <?php print joints_main_nav(); ?>
-	
+								  <?php print joints_main_nav(); ?>
+							</div>
 						</div> <!-- end #inner-header -->
 					</header> <!-- end .header -->
-					<div class="hide-for-large-up">
-						test
+					<div class="mobile-header hide-for-large-up">
+						<div class="small-9 columns"><a href="/" title="Home" rel="home" id="logo" class=""><img src="<?php echo get_template_directory_uri(); ?>/library/images/logo.png" alt="Home"></a></div>
+						<div class="small-3 columns">
+							<div class="show-mobile-menu">
+							    <div class="mobile-menu-icon">
+							        <span></span>
+							        <span></span>
+							        <span></span>
+							    </div>
+							</div>
+						</div>
 					</div>	

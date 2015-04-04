@@ -20,7 +20,11 @@ jQuery(document).ready(function($) {
     });
     
 
-// add all your scripts here
+	$('.mobile-menu-icon').click(function(){
+		$('.mobile-menu-icon').toggleClass('stuck');
+		$('body').toggleClass('overflow');
+		$('.mobile-menu').toggleClass('active');	
+	});
 	
  
 }); /* end of as page load scripts */
