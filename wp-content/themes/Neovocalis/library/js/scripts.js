@@ -19,6 +19,18 @@ jQuery(document).ready(function($) {
         $(this).attr('src',$(this).attr('data-gravatar'));
     });
     
+	$('.slides').slick({
+		arrows: true,		
+		autoplay: true,
+		autoplaySpeed: 3500,		
+		dots: true,
+		infinite: true,
+		speed: 500,
+		centerMode: true,
+		centerPadding: '60px',
+		slidesToShow: 3,
+		variableWidth: true		
+	});
 
 	$('.mobile-menu-icon').click(function(){
 		$('.mobile-menu-icon').toggleClass('stuck');

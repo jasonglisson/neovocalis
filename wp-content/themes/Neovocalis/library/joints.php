@@ -124,6 +124,9 @@ function joints_scripts_and_styles() {
    
     // register main stylesheet
     wp_enqueue_style( 'joints-stylesheet', get_template_directory_uri() . '/library/css/style.css', array(), $theme_version, 'all' );
+
+     // register neovocalis stylesheet
+    wp_enqueue_style( 'slick-style', get_template_directory_uri() . '/library/css/slick.css', array(), $theme_version, 'all' );
  
      // register neovocalis stylesheet
     wp_enqueue_style( 'neovocalis-style', get_template_directory_uri() . '/library/css/neovocalis.css', array(), $theme_version, 'all' );
@@ -137,7 +140,12 @@ function joints_scripts_and_styles() {
     }
 
     //adding scripts file in the footer
+    wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/library/js/slick.min.js', array( 'jquery' ), $theme_version, true );
+
+    //adding scripts file in the footer
     wp_enqueue_script( 'joints-js', get_template_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), $theme_version, true );
+
+
 
   }
 }
