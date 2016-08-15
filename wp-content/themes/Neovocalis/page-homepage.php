@@ -50,29 +50,54 @@ Template Name: Homepage
 					<div id="main" class="row" role="main">	
 						<div class="agenda large-4 columns">
 							<h2 class="heading">Agenda</h2>
-							<?php 
-								$this_post = $post->ID;
-							    $args = array( 'post_type' => 'agenda', 'posts_per_page' => 1 );
-							    $loop = new WP_Query( $args );
-							while ( $loop->have_posts() ) : $loop->the_post(); ?>
-							    <div class="blog-post-wrap">
-							    	<div class="blog-post">
-								    	<a class="blog-title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-										<div class="blog-date"> <?php the_date(); ?></div>										
-										<hr>
-										<div class="blog-base-share">
-											<a href="https://facebook.com/sharer.php?u=<?php the_permalink(); ?>&t=<?php the_title(); ?>" target="_blank"><i class="fi-social-facebook large"></i></a>
-											<a href="https://twitter.com/intent/tweet?text=<?php the_title(); ?>&url=<?php the_permalink(); ?>" target="_blank"><i class="fi-social-twitter large"></i></a>
-										</div>	
-									</div>
-								</div>
-							<?php endwhile; ?>
+						<?php
+
+						$event0 = current_time('Ymd');
+						$args = array(
+						    'post_type' => 'agenda',
+							'post_status' => 'publish',
+							'posts_per_page' => '2',
+							'meta_query' => array(
+								array(
+									'key' => 'date',
+									'compare' => '>=',
+									'value' => $event0,
+									)
+									),
+							'meta_key' => 'date',
+							'orderby' => 'meta_value',
+							'order' => 'DESC',
+							'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1 ),
+						);						
+						
+						$loop = new WP_Query( $args );
+						if ( !empty( $loop->posts ) ) {
+							while ( $loop->have_posts() ) : $loop->the_post();?>
+						    <div class="blog-post-wrap">
+						    	<div class="blog-post">
+							    	<a class="blog-title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    <div class="blog-date"> <?php $agendaDate = get_field('date', $loop->posts->ID); $d = DateTime::createFromFormat('Ymd', $agendaDate); print $d->format('d/m/Y');?></div>										
+                    <hr>
+                    <div class="blog-base-share">
+										  <a href="https://facebook.com/sharer.php?u=<?php the_permalink(); ?>&t=<?php the_title(); ?>" target="_blank"><i class="fi-social-facebook large"></i></a>
+                      <a href="https://twitter.com/intent/tweet?text=<?php the_title(); ?>&url=<?php the_permalink(); ?>" target="_blank"><i class="fi-social-twitter large"></i></a>
+                    </div>	
+                  </div>
+                </div>															  
+							<?php				
+							endwhile; 
+							echo '</ul><br><br>';
+						} else {
+							echo 'No upcoming events.<br><br><br><br><br><br>';
+						}
+						
+						?>							
 						</div>	
 						<div class="news large-4 columns">
 							<h2 class="heading">News</h2>
 							<?php 
 								$this_post = $post->ID;
-							    $args = array( 'post_type' => 'news', 'posts_per_page' => 1 );
+							    $args = array( 'post_type' => 'news', 'posts_per_page' => 2 );
 							    $loop = new WP_Query( $args );
 							while ( $loop->have_posts() ) : $loop->the_post(); ?>
 							    <div class="blog-post-wrap">
