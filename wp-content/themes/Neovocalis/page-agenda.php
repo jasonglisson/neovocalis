@@ -43,9 +43,9 @@ get_header(); ?>
 						);						
 						
 						$loop = new WP_Query( $args );
-						
+            echo '<ul>';
 						if ( !empty( $loop->posts ) ) {
-							while ( $loop->have_posts() ) : $loop->the_post();
+						  while ( $loop->have_posts() ) : $loop->the_post();
 							?><li class="event-list"><h3><a href="<?php the_permalink() ?>"><?php the_title();?> - 
 							<?php $date = DateTime::createFromFormat('Ymd', get_field('date'));
 								  echo $date->format('m/d/Y');?></a></h3>

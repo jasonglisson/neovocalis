@@ -77,12 +77,12 @@ Template Name: Homepage
 						    	<div class="blog-post">
 							    	<a class="blog-title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                     <div class="blog-date"> <?php $agendaDate = get_field('date', $loop->posts->ID); $d = DateTime::createFromFormat('Ymd', $agendaDate); print $d->format('d/m/Y');?></div>										
-                    <hr>
                     <div class="blog-base-share">
 										  <a href="https://facebook.com/sharer.php?u=<?php the_permalink(); ?>&t=<?php the_title(); ?>" target="_blank"><i class="fi-social-facebook large"></i></a>
                       <a href="https://twitter.com/intent/tweet?text=<?php the_title(); ?>&url=<?php the_permalink(); ?>" target="_blank"><i class="fi-social-twitter large"></i></a>
                     </div>	
                   </div>
+                  <hr>
                 </div>															  
 							<?php				
 							endwhile; 
