@@ -28,6 +28,23 @@ register_nav_menus(
 	)
 );
 
+add_theme_support( 'post-thumbnails' );
+add_image_size( 'large-thumbnails', 220, 220, true );
+
+function custom_field_excerpt($title) {
+	global $post;
+	$text = get_field($title);
+	if ( '' != $text ) {
+		$text = strip_shortcodes( $text );
+		$text = apply_filters('the_content', $text);
+		$text = str_replace(']]>', ']]>', $text);
+		$excerpt_length = 20; // 20 words
+		$excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
+		$text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+	}
+	return apply_filters('the_excerpt', $text);
+}
+
 // THE TOP MENU
 function joints_top_nav() {
     wp_nav_menu(array(

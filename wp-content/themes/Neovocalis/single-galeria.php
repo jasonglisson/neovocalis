@@ -38,8 +38,8 @@ single-bookmarks.php
 						if( $images ): ?>
 						        <?php foreach( $images as $image ): ?>
 						            <div class="large-2 medium-4 small-6 left">
-						                <a href="<?php echo $image['url']; ?>">
-						                     <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
+						                <a href="<?php echo $image['url']; ?>" rel="lightbox[group]">
+						                     <img src="<?php echo $image['sizes']['large-thumbnails']; ?>" alt="<?php echo $image['alt']; ?>" />
 						                </a>
 <!-- 						                <p><?php echo $image['caption']; ?></p> -->
 						            </div>
